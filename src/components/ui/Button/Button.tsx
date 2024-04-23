@@ -1,13 +1,14 @@
 import React from "react";
+import s from "./Button.module.css";
 
 interface ButtonProps {
   children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({}) => {
+const Button: React.FC<ButtonProps> = ({ children }) => {
   return (
     <>
-      <button>123</button>
+      <button className={s.Button}>{children}</button>
     </>
   );
 };
