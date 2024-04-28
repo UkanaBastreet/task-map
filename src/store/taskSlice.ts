@@ -17,14 +17,12 @@ export const taskSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, action: PayloadAction<ITask>) => {
-      console.log(action.payload);
       state.tasks = [...state.tasks, action.payload];
     },
     removeTask: (state, action: PayloadAction<number>) => {
       state.tasks = state.tasks.filter((task) => task.id !== action.payload);
     },
     updateTask: (state, action: PayloadAction<ITask>) => {
-      console.log(action.payload);
       state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload.id) {
           return action.payload;
