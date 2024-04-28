@@ -1,11 +1,17 @@
 .Button {
   cursor: pointer;
   padding: 0.3rem 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid gray;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  background-color: transparent;
 }
 
 .Button:hover {
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
-.Button:active {
+.Button:active,
+.Button:focus {
+  outline: 2px solid cornflowerblue;
 }
