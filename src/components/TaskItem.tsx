@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { ITask } from "../types/task";
+import Button from "./ui/Button/Button";
 
 interface TaskItemProps {
   task: ITask;
@@ -31,8 +32,8 @@ export const TaskItem: FC<TaskItemProps> = ({
             name=""
             id=""
           />
+          <Button onClick={() => removeTask(task.id)}>x</Button>
         </div>
-        <button onClick={() => removeTask(task.id)}>x</button>
       </div>
     </>
   );

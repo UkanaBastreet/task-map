@@ -21,14 +21,14 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    /* --main-color: black; */
     /* --main-color: red; */
+    --main-color: black;
   }
 }
 @media (prefers-color-scheme: light) {
   body {
     /* --main-color: white; */
-    --main-color: blue;
+    --main-color: white;
   }
 }
 
