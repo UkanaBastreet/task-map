@@ -5,7 +5,7 @@ import "./TodoPage.css";
 
 interface TodoPageProps {}
 
-const TodoPage: FC<TodoPageProps> = ({}) => {
+const TodoPage: FC<TodoPageProps> = () => {
   return (
     <>
       <div className="Todo-page">
