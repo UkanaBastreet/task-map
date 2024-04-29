@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import taskSlice from "./taskSlice";
+import todoSlice from "./todoSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 export const store = configureStore({
-  reducer: { tasksState: taskSlice },
+  reducer: { todoState: todoSlice },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
