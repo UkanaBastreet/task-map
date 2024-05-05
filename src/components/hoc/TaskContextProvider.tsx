@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { AppDispatch, RootState } from "../../store/store";
 import { addTask, removeTask, updateTask } from "../../store/taskSlice";
-import TaskList from "../TaskList";
 import { ConnectedProps } from "react-redux";
 
 function mapState(state: RootState) {
