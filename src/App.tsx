@@ -1,7 +1,6 @@
 import "./App.css";
 import { Link } from "react-router-dom";
-import TaskList from "./components/TaskList";
-import TaskForm from "./components/TaskForm";
+import TaskPage from "./components/TaskPage";
 
 function App() {
   return (
@@ -18,8 +17,7 @@ function App() {
       <main>
         <nav>nav</nav>
         <section className="content">
-          <TaskList />
-          <TaskForm />
+          <TaskPage />
         </section>
         <aside>aside</aside>
       </main>

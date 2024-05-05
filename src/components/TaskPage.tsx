@@ -1,13 +1,13 @@
 import { FC } from "react";
-import TaskList from "./TaskList";
+import TodoListContainer from "./hoc/TodoListContainer";
+import TaskForm from "./TaskForm";
 
-interface TaskPageProps {}
-
-const TaskPage: FC<TaskPageProps> = ({}) => {
+const TaskPage: FC = () => {
   return (
     <>
       <div className="task-page">
-        <TaskList />
+        <TodoListContainer />
+        <TaskForm />
       </div>
     </>
   );
