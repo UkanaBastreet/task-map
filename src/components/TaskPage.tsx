@@ -1,16 +1,30 @@
 import { FC } from "react";
-import TodoListContainer from "./hoc/TodoListContainer";
 import TaskForm from "./TaskForm";
+import TaskContextProvider, {
+  TaskContextProps,
+} from "./hoc/TaskContextProvider";
+import TaskList from "./TaskList";
 
-const TaskPage: FC = () => {
+interface TaskPageProps extends TaskContextProps {}
+
+const TaskPage: FC<TaskPageProps> = ({
+  tasks,
+  addTask,
+  removeTask,
+  updateTask,
+}) => {
   return (
     <>
       <div className="task-page">
-        <TodoListContainer />
-        <TaskForm />
+        <TaskList
+          tasks={tasks}
+          removeTask={removeTask}
+          updateTask={updateTask}
+        />
+        <TaskForm addTask={addTask} />
       </div>
     </>
   );
 };
 
-export default TaskPage;
+export default TaskContextProvider(TaskPage);

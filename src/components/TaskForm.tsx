@@ -1,10 +1,9 @@
 import { FC, FormEvent, useState } from "react";
-import { AppDispatch } from "../store/store";
-import { ConnectedProps, connect } from "react-redux";
-import { addTask } from "../store/taskSlice";
-import { bindActionCreators } from "redux";
+import { ITask } from "../types/task";
 
-interface TaskFormProps extends PropsFromRedux {}
+interface TaskFormProps {
+  addTask: (task: ITask) => void;
+}
 
 const TaskForm: FC<TaskFormProps> = ({ addTask }) => {
   const [text, setText] = useState("");
@@ -34,11 +33,4 @@ const TaskForm: FC<TaskFormProps> = ({ addTask }) => {
   );
 };
 
-function mapDispatch(dispatch: AppDispatch) {
-  return bindActionCreators({ addTask }, dispatch);
-}
-// function mapStateToProps(state: RootState) {}
-const connector = connect(null, mapDispatch);
-type PropsFromRedux = ConnectedProps<typeof connector>;
-
-export default connector(TaskForm);
+export default TaskForm;

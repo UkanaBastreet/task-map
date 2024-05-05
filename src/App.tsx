@@ -1,6 +1,6 @@
 import "./App.css";
 import { Link } from "react-router-dom";
-import TaskPage from "./components/TaskPage";
+import Taskage from "./components/TaskPage";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <main>
         <nav>nav</nav>
         <section className="content">
-          <TaskPage />
+          <Taskage />
         </section>
         <aside>aside</aside>
       </main>
