@@ -1,9 +1,9 @@
 import { FC } from "react";
-import TaskForm from "./TaskForm";
+import TaskForm from "../TaskForm";
 import TaskContextProvider, {
   TaskContextProps,
-} from "./hoc/TaskContextProvider";
-import TaskList from "./TaskList";
+} from "../hoc/TaskContextProvider";
+import TaskList from "../TaskList";
 
 interface TaskPageProps extends TaskContextProps {}
 
