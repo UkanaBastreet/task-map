@@ -6,7 +6,7 @@ interface TaskListProps {
   tasks: Task[];
 }
 
-export const TaskList: FC<TaskListProps> = ({ tasks }) => {
+const TodoList: FC<TodoListProps> = ({ tasks, removeTask, updateTask }) => {
   return (
     <>
       <div className={s.TaskList}>
@@ -17,3 +17,4 @@ export const TaskList: FC<TaskListProps> = ({ tasks }) => {
     </>
   );
 };
+export default TodoList;

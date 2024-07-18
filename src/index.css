@@ -36,3 +36,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+input[type="checkbox"] {
+  color: rebeccapurple;
+  width: 16px;
+  height: 16px;
+  padding: 1rem;
+  cursor: pointer;
+}
