@@ -1,36 +1,55 @@
 import { FC, FormEvent, useState } from "react";
-import { ITask } from "../types/task";
+import { Task } from "./TaskItem";
+import Input from "./ui/Input/Input";
+import Button from "./ui/Button/Button";
 
 interface TaskFormProps {
-  addTask: (task: ITask) => void;
+  addTask: (task: Task) => void;
 }
 
-const TaskForm: FC<TaskFormProps> = ({ addTask }) => {
-  const [text, setText] = useState("");
+export const TaskForm: FC<TaskFormProps> = ({ addTask }) => {
+  const [value, setValue] = useState("");
+  const [toggle, setToggle] = useState(false);
 
-  function addTaskHandler(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (text !== "") {
+    const target: HTMLFormElement = e.target as HTMLFormElement;
+    const data = new FormData(target);
+    const taskText = data.get("task")?.toString();
+    if (taskText && taskText.trim() !== "") {
       addTask({
         id: Date.now(),
-        text: text.toString(),
-        isCompleted: false,
-        date: Date.now(),
+        title: taskText,
+        status: "open",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       });
-      setText("");
+      setValue("");
     }
   }
   return (
-    <>
-      <form onSubmit={addTaskHandler} className="task-form">
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-      </form>
-    </>
+    <div className="TaskForm__wrapper">
+      {toggle ? (
+        <form onSubmit={handleSubmit} className="TaskForm Card">
+          <Input
+            name="task"
+            type="text"
+            placeholder="Task name"
+            value={value}
+            onSubmit={console.log}
+            onChange={(e) => setValue(e.target.value)}
+            onBlur={(e) => {
+              setValue("");
+            }}
+            autoComplete="off"
+          />
+          <Button secondary type="submit">
+            +
+          </Button>
+        </form>
+      ) : (
+        <Button onClick={() => setToggle(true)}>Add New Task</Button>
+      )}
+    </div>
   );
 };
-
-export default TaskForm;

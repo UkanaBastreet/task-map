@@ -1,40 +1,30 @@
 import { FC } from "react";
-import { ITask } from "../types/task";
-import Button from "./ui/Button/Button";
+import { Card } from "./ui/Card/Card";
+import s from "./TaskList.module.css";
 
 interface TaskItemProps {
-  task: ITask;
-  removeTask: (id: number) => void;
-  updateTask: (task: ITask) => void;
+  task: Task;
+}
+export interface Task {
+  id: number;
+  title: string;
+  description?: string;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export const TaskItem: FC<TaskItemProps> = ({
-  task,
-  removeTask,
-  updateTask,
-}) => {
+export const TaskItem: FC<TaskItemProps> = ({ task }) => {
   return (
     <>
-      <div>
-        <div>
-          <h1
-            style={{ textDecoration: task.isCompleted ? "line-through" : "" }}
-          >
-            {task.text}
-          </h1>
-          <span>{new Date(task.date).toDateString()}</span>
-          <input
-            checked={task.isCompleted}
-            onChange={() =>
-              updateTask({ ...task, isCompleted: !task.isCompleted })
-            }
-            type="checkbox"
-            name=""
-            id=""
-          />
-          <Button onClick={() => removeTask(task.id)}>x</Button>
+      <Card id={task.id.toString()} className={s.TaskItem}>
+        <b>{task.title}</b>
+        {task.description && <p>{task.description}</p>}
+        <div className="Card__footer">
+          <span>{task.status}</span>
+          <span>{task.createdAt.toDateString()}</span>
         </div>
-      </div>
+      </Card>
     </>
   );
 };

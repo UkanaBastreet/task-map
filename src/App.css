@@ -11,7 +11,7 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
-
+  
   /* background-color: coral; */
 }
 main {
@@ -39,7 +39,7 @@ footer {
 .link {
   text-decoration: none;
 }
-.link:hover {
+.link:hover{
   text-decoration: underline;
 }
 .link:visited {

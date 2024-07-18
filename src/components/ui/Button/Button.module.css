@@ -1,17 +1,26 @@
 .Button {
+  background-color: #495057;
+  border: 1px solid #495057;
+  color: white;
+  border: none;
   cursor: pointer;
-  padding: 0.3rem 1rem;
-  border-radius: 0.2rem;
-  border: 1px solid gray;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень */
-  background-color: transparent;
-}
 
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-weight: 700;
+}
 .Button:hover {
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: #333;
 }
-
-.Button:active,
 .Button:focus {
-  outline: 2px solid cornflowerblue;
+  outline: none;
+}
+.Button:active {
+  background-color: #222;
+}
+.Button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -1,24 +1,17 @@
 import { FC } from "react";
-import { ITask } from "../types/task";
-import { TaskItem } from "./TaskItem";
+import { Task, TaskItem } from "./TaskItem";
+import s from "./TaskList.module.css";
 
 interface TodoListProps {
-  removeTask: (id: number) => void;
-  updateTask: (task: ITask) => void;
-  tasks: ITask[];
+  tasks: Task[];
 }
 
-const TodoList: FC<TodoListProps> = ({ tasks, removeTask, updateTask }) => {
+const TodoList: FC<TodoListProps> = ({ tasks }) => {
   return (
     <>
-      <div>
+      <div className={s.TaskList}>
         {tasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            removeTask={removeTask}
-            updateTask={updateTask}
-          />
+          <TaskItem key={task.id} task={task} />
         ))}
       </div>
     </>

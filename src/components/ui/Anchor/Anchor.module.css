@@ -1,0 +1,11 @@
+.Anchor {
+  /* position: relative; */
+  position: sticky;
+  top: 5rem;
+  right: 0;
+}
+.Anchor__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
