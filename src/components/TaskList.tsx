@@ -2,11 +2,11 @@ import { FC } from "react";
 import { Task, TaskItem } from "./TaskItem";
 import s from "./TaskList.module.css";
 
-interface TaskListProps {
+interface TodoListProps {
   tasks: Task[];
 }
 
-const TodoList: FC<TodoListProps> = ({ tasks, removeTask, updateTask }) => {
+const TodoList: FC<TodoListProps> = ({ tasks }) => {
   return (
     <>
       <div className={s.TaskList}>

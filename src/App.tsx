@@ -1,5 +1,5 @@
 import "./App.css";
-import { TaskList } from "./components/TaskList";
+import TaskList from "./components/TaskList";
 import { TaskForm } from "./components/TaskForm";
 import { Task } from "./components/TaskItem";
 import { useState } from "react";
