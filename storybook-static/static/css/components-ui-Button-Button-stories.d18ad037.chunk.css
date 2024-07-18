@@ -1,0 +1,29 @@
+.Button_Button__mZcOm {
+  background-color: #495057;
+  border: 1px solid #495057;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-weight: 700;
+}
+.Button_Button__mZcOm:hover {
+  background-color: #333;
+}
+.Button_Button__mZcOm:focus {
+  outline: none;
+}
+.Button_Button__mZcOm:active {
+  background-color: #222;
+}
+.Button_Button__mZcOm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/*# sourceMappingURL=components-ui-Button-Button-stories.d18ad037.chunk.css.map*/

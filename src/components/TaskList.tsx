@@ -1,16 +1,17 @@
 import { FC } from "react";
-import { TaskItem } from "./TaskItem";
+import { Task, TaskItem } from "./TaskItem";
+import s from "./TaskList.module.css";
 
 interface TaskListProps {
-  tasks: any[];
+  tasks: Task[];
 }
 
 export const TaskList: FC<TaskListProps> = ({ tasks }) => {
   return (
     <>
-      <div>
+      <div className={s.TaskList}>
         {tasks.map((task) => (
-          <TaskItem key={task.id} />
+          <TaskItem key={task.id} task={task} />
         ))}
       </div>
     </>
