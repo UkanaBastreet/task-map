@@ -6,5 +6,8 @@ jobs:
     steps:
        - name: Print to console
          run: echo Hello GC Actions! 
-         
+       - name: Print a few lines
+         run: |
+          echo First line 
+          echo Second Line
   
